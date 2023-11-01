@@ -186,6 +186,7 @@ public class MyFrame extends JFrame {
         
         
     }
+    
     // THIS IS WHERE THE LOGIC OF THE GAME LIES
     
     
