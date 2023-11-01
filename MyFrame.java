@@ -44,6 +44,7 @@ public class MyFrame extends JFrame {
         JPanel panel = new JPanel(new GridLayout(3, 3, 10, 10));
         
         // SETS THE SETTING FOR EACH BUTTON
+        col1Row1.setFocusPainted(false);
         col1Row1.setForeground(Color.BLACK);
         col1Row1.setFont(new Font("MV Boli", Font.BOLD, 50));
         
@@ -54,13 +55,17 @@ public class MyFrame extends JFrame {
         	col1Row1.setEnabled(false);
         	if(win()) {
         		JOptionPane.showMessageDialog(this, "You win!");
+        		resetGameBotTurn();
+        	}
+        	else if(stalemate()) {
+        		JOptionPane.showMessageDialog(this, "No one won!");
         		resetGame();
         	}
-        	
         	// IF PLAYER DOESN'T WIN IN THIS INSTANCE, THE BOT IS VALID TO MOVE
         	else botTurn();
         });
         
+        col1Row2.setFocusPainted(false);
         col1Row2.setForeground(Color.BLACK);
         col1Row2.setFont(new Font("MV Boli", Font.BOLD, 50));
         col1Row2.addActionListener(e -> {
@@ -69,11 +74,16 @@ public class MyFrame extends JFrame {
         	col1Row2.setEnabled(false);
         	if(win()) {
         		JOptionPane.showMessageDialog(this, "You win!");
+        		resetGameBotTurn();
+        	}
+        	else if(stalemate()) {
+        		JOptionPane.showMessageDialog(this, "No one won!");
         		resetGame();
         	}
         	else botTurn();
         });
         
+        col1Row3.setFocusPainted(false);
         col1Row3.setForeground(Color.BLACK);
         col1Row3.setFont(new Font("MV Boli", Font.BOLD, 50));
         col1Row3.addActionListener(e -> {
@@ -82,11 +92,16 @@ public class MyFrame extends JFrame {
         	col1Row3.setEnabled(false);
         	if(win()) {
         		JOptionPane.showMessageDialog(this, "You win!");
+        		resetGameBotTurn();
+        	}
+        	else if(stalemate()) {
+        		JOptionPane.showMessageDialog(this, "No one won!");
         		resetGame();
         	}
         	else botTurn();
         });
         
+        col2Row1.setFocusPainted(false);
         col2Row1.setForeground(Color.BLACK);
         col2Row1.setFont(new Font("MV Boli", Font.BOLD, 50));
         col2Row1.addActionListener(e -> {
@@ -95,11 +110,16 @@ public class MyFrame extends JFrame {
         	col2Row1.setEnabled(false);
         	if(win()) {
         		JOptionPane.showMessageDialog(this, "You win!");
+        		resetGameBotTurn();
+        	}
+        	else if(stalemate()) {
+        		JOptionPane.showMessageDialog(this, "No one won!");
         		resetGame();
         	}
         	else botTurn();
         });
         
+        col2Row2.setFocusPainted(false);
         col2Row2.setForeground(Color.BLACK);
         col2Row2.setFont(new Font("MV Boli", Font.BOLD, 50));
         col2Row2.addActionListener(e -> {
@@ -108,11 +128,16 @@ public class MyFrame extends JFrame {
         	col2Row2.setEnabled(false);
         	if(win()) {
         		JOptionPane.showMessageDialog(this, "You win!");
+        		resetGameBotTurn();
+        	}
+        	else if(stalemate()) {
+        		JOptionPane.showMessageDialog(this, "No one won!");
         		resetGame();
         	}
-        	botTurn();
+        	else botTurn();
         });
         
+        col2Row3.setFocusPainted(false);
         col2Row3.setForeground(Color.BLACK);
         col2Row3.setFont(new Font("MV Boli", Font.BOLD, 50));
         col2Row3.addActionListener(e -> {
@@ -121,11 +146,16 @@ public class MyFrame extends JFrame {
         	col2Row3.setEnabled(false);
         	if(win()) {
         		JOptionPane.showMessageDialog(this, "You win!");
+        		resetGameBotTurn();
+        	}
+        	else if(stalemate()) {
+        		JOptionPane.showMessageDialog(this, "No one won!");
         		resetGame();
         	}
         	else botTurn();
         });
         
+        col3Row1.setFocusPainted(false);
         col3Row1.setForeground(Color.BLACK);
         col3Row1.setFont(new Font("MV Boli", Font.BOLD, 50));
         col3Row1.addActionListener(e -> {
@@ -134,11 +164,16 @@ public class MyFrame extends JFrame {
         	col3Row1.setEnabled(false);
         	if(win()) {
         		JOptionPane.showMessageDialog(this, "You win!");
+        		resetGameBotTurn();
+        	}
+        	else if(stalemate()) {
+        		JOptionPane.showMessageDialog(this, "No one won!");
         		resetGame();
         	}
         	else botTurn();
         });
         
+        col3Row2.setFocusPainted(false);
         col3Row2.setForeground(Color.BLACK);
         col3Row2.setFont(new Font("MV Boli", Font.BOLD, 50));
         col3Row2.addActionListener(e -> {
@@ -147,11 +182,16 @@ public class MyFrame extends JFrame {
         	col3Row2.setEnabled(false);
         	if(win()) {
         		JOptionPane.showMessageDialog(this, "You win!");
+        		resetGameBotTurn();
+        	}
+        	else if(stalemate()) {
+        		JOptionPane.showMessageDialog(this, "No one won!");
         		resetGame();
         	}
         	else botTurn();
         });
         
+        col3Row3.setFocusPainted(false);
         col3Row3.setForeground(Color.BLACK);
         col3Row3.setFont(new Font("MV Boli", Font.BOLD, 50));
         col3Row3.addActionListener(e -> {
@@ -160,6 +200,10 @@ public class MyFrame extends JFrame {
         	col3Row3.setEnabled(false);
         	if(win()) {
         		JOptionPane.showMessageDialog(this, "You win!");
+        		resetGameBotTurn();
+        	}
+        	else if(stalemate()) {
+        		JOptionPane.showMessageDialog(this, "No one won!");
         		resetGame();
         	}
         	else botTurn();
@@ -183,6 +227,8 @@ public class MyFrame extends JFrame {
         // CREATES A BORDER FOR THE FRAME
         Border border = new LineBorder(Color.WHITE, 10);
         this.getRootPane().setBorder(border);
+        this.setLocationRelativeTo(null);
+        this.setTitle("Player vs Bot");
         
         
     }
@@ -316,5 +362,16 @@ public class MyFrame extends JFrame {
 	            buttons[row][col].setText("-");
 	        }
 	    }
+	}
+	
+	private void resetGameBotTurn() {
+	    for (int row = 0; row < game.length; row++) {
+	        for (int col = 0; col < game[row].length; col++) {
+	            game[row][col] = 0;
+	            buttons[row][col].setEnabled(true);
+	            buttons[row][col].setText("-");
+	        }
+	    }
+	    botTurn();
 	}
 }

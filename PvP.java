@@ -43,12 +43,13 @@ public class PvP extends JFrame {
         
         
         JPanel title = new JPanel(new FlowLayout());
-        guide.setFont(new Font("", Font.BOLD, 20));
+        guide.setFont(new Font("", Font.BOLD, 50));
         JPanel panel = new JPanel(new GridLayout(3, 3, 10, 10));
         
         
         // SETS WHAT THE BUTTON WILL LOOK LIKE AND ADDS FUNCTIONALITY
         // THIS APPLIES TO EVERY OTHER BUTTONS AS WELL
+        col1Row1.setFocusPainted(false);
         col1Row1.setForeground(Color.BLACK);
         col1Row1.setFont(new Font("MV Boli", Font.BOLD, 50));
         col1Row1.addActionListener(e -> {
@@ -74,6 +75,7 @@ public class PvP extends JFrame {
         	}
         });
         
+        col1Row2.setFocusPainted(false);
         col1Row2.setForeground(Color.BLACK);
         col1Row2.setFont(new Font("MV Boli", Font.BOLD, 50));
         col1Row2.addActionListener(e -> {
@@ -99,6 +101,7 @@ public class PvP extends JFrame {
         	}
         });
 
+        col1Row3.setFocusPainted(false);
         col1Row3.setForeground(Color.BLACK);
         col1Row3.setFont(new Font("MV Boli", Font.BOLD, 50));
         col1Row3.addActionListener(e -> {
@@ -124,6 +127,7 @@ public class PvP extends JFrame {
         	}
         });
 
+        col2Row1.setFocusPainted(false);
         col2Row1.setForeground(Color.BLACK);
         col2Row1.setFont(new Font("MV Boli", Font.BOLD, 50));
         col2Row1.addActionListener(e -> {
@@ -149,6 +153,7 @@ public class PvP extends JFrame {
         	}
         });
 
+        col2Row2.setFocusPainted(false);
         col2Row2.setForeground(Color.BLACK);
         col2Row2.setFont(new Font("MV Boli", Font.BOLD, 50));
         col2Row2.addActionListener(e -> {
@@ -174,6 +179,7 @@ public class PvP extends JFrame {
         	}
         });
         
+        col2Row3.setFocusPainted(false);
         col2Row3.setForeground(Color.BLACK);
         col2Row3.setFont(new Font("MV Boli", Font.BOLD, 50));
         col2Row3.addActionListener(e -> {
@@ -199,6 +205,7 @@ public class PvP extends JFrame {
         	}
         });
 
+        col3Row1.setFocusPainted(false);
         col3Row1.setForeground(Color.BLACK);
         col3Row1.setFont(new Font("MV Boli", Font.BOLD, 50));
         col3Row1.addActionListener(e -> {
@@ -224,6 +231,7 @@ public class PvP extends JFrame {
         	}
         });
         
+        col3Row2.setFocusPainted(false);
         col3Row2.setForeground(Color.BLACK);
         col3Row2.setFont(new Font("MV Boli", Font.BOLD, 50));
         col3Row2.addActionListener(e -> {
@@ -249,6 +257,7 @@ public class PvP extends JFrame {
         	}
         });
 
+        col3Row3.setFocusPainted(false);
         col3Row3.setForeground(Color.BLACK);
         col3Row3.setFont(new Font("MV Boli", Font.BOLD, 50));
         col3Row3.addActionListener(e -> {
@@ -291,6 +300,8 @@ public class PvP extends JFrame {
         this.add(panel, BorderLayout.CENTER);
         Border border = new LineBorder(Color.WHITE, 10);
         this.getRootPane().setBorder(border);
+        this.setLocationRelativeTo(null);
+        this.setTitle("PvP");
         
     }
     

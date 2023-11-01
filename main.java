@@ -17,17 +17,19 @@ import javax.swing.border.Border;
 public class main {
 	public static void main(String[] args) {
 		
-		   JFrame game = new JFrame();
+		   	JFrame game = new JFrame();
 	        JPanel panel = new JPanel(new GridBagLayout());
 	        JLabel title = new JLabel("Tic-Tac-Toe");
 	        JButton player = new JButton("Player vs Player");
 	        JButton bot = new JButton("Player vs Bot");
 	        
+	        bot.setFocusPainted(false);
 	        bot.addActionListener(e -> {
 	        	game.dispose();
 	        	new MyFrame();
 	        });
 	        
+	        player.setFocusPainted(false);
 	        player.addActionListener(e -> {
 	        	game.dispose();
 	        	new PvP();
@@ -50,13 +52,14 @@ public class main {
 
 	        gbc.gridy = 2;
 	        panel.add(bot, gbc);
-
+	        
+	        game.setTitle("Tic-Tac-Toe");
 	        game.setVisible(true);
 	        game.setSize(300, 550);
 	        game.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        game.setResizable(false);
 	        game.add(panel);
+	        game.setLocationRelativeTo(null);
 		
 	}
-
 }
