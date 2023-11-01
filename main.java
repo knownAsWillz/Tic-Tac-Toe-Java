@@ -10,7 +10,7 @@ import javax.swing.border.Border;
 // MAKE UI BETTER
 
 // CURRENT PENDING TASK:
-// ADD THE STALEMATE LOGIC
+// ADD STALEMATE FUNCTION TO PVP MODE
 
 
 

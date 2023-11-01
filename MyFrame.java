@@ -53,16 +53,7 @@ public class MyFrame extends JFrame {
         	game[0][0] = 1;
         	col1Row1.setText("O");
         	col1Row1.setEnabled(false);
-        	if(win()) {
-        		JOptionPane.showMessageDialog(this, "You win!");
-        		resetGameBotTurn();
-        	}
-        	else if(stalemate()) {
-        		JOptionPane.showMessageDialog(this, "No one won!");
-        		resetGame();
-        	}
-        	// IF PLAYER DOESN'T WIN IN THIS INSTANCE, THE BOT IS VALID TO MOVE
-        	else botTurn();
+        	checker();
         });
         
         col1Row2.setFocusPainted(false);
@@ -72,15 +63,7 @@ public class MyFrame extends JFrame {
         	game[0][1] = 1;
         	col1Row2.setText("O");
         	col1Row2.setEnabled(false);
-        	if(win()) {
-        		JOptionPane.showMessageDialog(this, "You win!");
-        		resetGameBotTurn();
-        	}
-        	else if(stalemate()) {
-        		JOptionPane.showMessageDialog(this, "No one won!");
-        		resetGame();
-        	}
-        	else botTurn();
+        	checker();
         });
         
         col1Row3.setFocusPainted(false);
@@ -90,15 +73,7 @@ public class MyFrame extends JFrame {
         	game[0][2] = 1;
         	col1Row3.setText("O");
         	col1Row3.setEnabled(false);
-        	if(win()) {
-        		JOptionPane.showMessageDialog(this, "You win!");
-        		resetGameBotTurn();
-        	}
-        	else if(stalemate()) {
-        		JOptionPane.showMessageDialog(this, "No one won!");
-        		resetGame();
-        	}
-        	else botTurn();
+        	checker();
         });
         
         col2Row1.setFocusPainted(false);
@@ -108,15 +83,7 @@ public class MyFrame extends JFrame {
         	game[1][0] = 1;
         	col2Row1.setText("O");
         	col2Row1.setEnabled(false);
-        	if(win()) {
-        		JOptionPane.showMessageDialog(this, "You win!");
-        		resetGameBotTurn();
-        	}
-        	else if(stalemate()) {
-        		JOptionPane.showMessageDialog(this, "No one won!");
-        		resetGame();
-        	}
-        	else botTurn();
+        	checker();
         });
         
         col2Row2.setFocusPainted(false);
@@ -126,15 +93,7 @@ public class MyFrame extends JFrame {
         	game[1][1] = 1;
         	col2Row2.setText("O");
         	col2Row2.setEnabled(false);
-        	if(win()) {
-        		JOptionPane.showMessageDialog(this, "You win!");
-        		resetGameBotTurn();
-        	}
-        	else if(stalemate()) {
-        		JOptionPane.showMessageDialog(this, "No one won!");
-        		resetGame();
-        	}
-        	else botTurn();
+        	checker();
         });
         
         col2Row3.setFocusPainted(false);
@@ -144,15 +103,7 @@ public class MyFrame extends JFrame {
         	game[1][2] = 1;
         	col2Row3.setText("O");
         	col2Row3.setEnabled(false);
-        	if(win()) {
-        		JOptionPane.showMessageDialog(this, "You win!");
-        		resetGameBotTurn();
-        	}
-        	else if(stalemate()) {
-        		JOptionPane.showMessageDialog(this, "No one won!");
-        		resetGame();
-        	}
-        	else botTurn();
+        	checker();
         });
         
         col3Row1.setFocusPainted(false);
@@ -162,15 +113,7 @@ public class MyFrame extends JFrame {
         	game[2][0] = 1;
         	col3Row1.setText("O");
         	col3Row1.setEnabled(false);
-        	if(win()) {
-        		JOptionPane.showMessageDialog(this, "You win!");
-        		resetGameBotTurn();
-        	}
-        	else if(stalemate()) {
-        		JOptionPane.showMessageDialog(this, "No one won!");
-        		resetGame();
-        	}
-        	else botTurn();
+        	checker();
         });
         
         col3Row2.setFocusPainted(false);
@@ -180,15 +123,7 @@ public class MyFrame extends JFrame {
         	game[2][1] = 1;
         	col3Row2.setText("O");
         	col3Row2.setEnabled(false);
-        	if(win()) {
-        		JOptionPane.showMessageDialog(this, "You win!");
-        		resetGameBotTurn();
-        	}
-        	else if(stalemate()) {
-        		JOptionPane.showMessageDialog(this, "No one won!");
-        		resetGame();
-        	}
-        	else botTurn();
+        	checker();
         });
         
         col3Row3.setFocusPainted(false);
@@ -198,15 +133,7 @@ public class MyFrame extends JFrame {
         	game[2][2] = 1;
         	col3Row3.setText("O");
         	col3Row3.setEnabled(false);
-        	if(win()) {
-        		JOptionPane.showMessageDialog(this, "You win!");
-        		resetGameBotTurn();
-        	}
-        	else if(stalemate()) {
-        		JOptionPane.showMessageDialog(this, "No one won!");
-        		resetGame();
-        	}
-        	else botTurn();
+        	checker();
         });
         
         // ADDS EACH BUTTON TO THE PANEL
@@ -258,6 +185,11 @@ public class MyFrame extends JFrame {
 			JOptionPane.showMessageDialog(this, "You Lose!");
 			resetGame();
 		}
+		else if(stalemate()) {
+    		JOptionPane.showMessageDialog(this, "Stalemate!");
+    		resetGame();
+    	}
+		
 	}
     
 	// THE VALIDATOR IF THE PLAYER HAS WON
@@ -270,9 +202,24 @@ public class MyFrame extends JFrame {
     	return checkHorizontalOp(game) || checkVerticalOp(game) || checkDiagonalOp(game);
     }
     
-    // TO UPDATE
+    // CHECKS IF THERE IS A STALEMATE
     boolean stalemate() {
         return !win() && !opponentWin() && isBoardFull();
+    }
+    
+    // MAKES THE CODE LESS REPETITIVE
+    void checker() {
+    	if(win()) {
+    		JOptionPane.showMessageDialog(this, "You win!");
+    		resetGameBotTurn();
+    	}
+    	else if(stalemate()) {
+    		JOptionPane.showMessageDialog(this, "Stalemate!");
+    		resetGame();
+    	}
+    	
+    	// IF NONE OF THE PRECEDING CONDITIONS ARE TRUE, THE BOT IS VALID TO MOVE
+    	else botTurn();
     }
     
     // CHECKS IF THERE ARE TILES LEFT TO TURN
