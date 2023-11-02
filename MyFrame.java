@@ -165,6 +165,7 @@ public class MyFrame extends JFrame {
     
     // THE BOT'S LOGIC
 	private void botTurn() {
+		
 		boolean check = false;
 		
 		// THIS CHUNK OF CODE WILL NEVER STOP UNTIL THE ALGORITHM FINDS A ZERO IN THE "GAME" ARRAY

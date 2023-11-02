@@ -6,7 +6,6 @@ import javax.swing.border.Border;
 // TIC TAC TO GAME
 
 // FUTURE UPDATES TO DO:
-// CREATE A DIFFICULTY OPTION OF EASY AND HARD FOR BOT OPTION
 // MAKE UI BETTER
 
 // CURRENT PENDING TASK:
@@ -22,6 +21,7 @@ public class main {
 	        JLabel title = new JLabel("Tic-Tac-Toe");
 	        JButton player = new JButton("Player vs Player");
 	        JButton bot = new JButton("Player vs Bot");
+	        JButton ai = new JButton("Player vs AI");
 	        
 	        bot.setFocusPainted(false);
 	        bot.addActionListener(e -> {
@@ -34,6 +34,12 @@ public class main {
 	        	game.dispose();
 	        	new PvP();
 	        });
+	        
+	        ai.setFocusable(false);
+	        ai.addActionListener(e -> {
+	        	game.dispose();
+	        	new HardBot();
+	        });
 
 	        title.setFont(new Font("", Font.BOLD, 30));
 
@@ -42,6 +48,7 @@ public class main {
 
 	        player.setPreferredSize(new Dimension(200, 40));
 	        bot.setPreferredSize(new Dimension(200, 40));
+	        ai.setPreferredSize(new Dimension(200, 40));
 
 	        gbc.gridx = 0;
 	        gbc.gridy = 0;
@@ -52,6 +59,9 @@ public class main {
 
 	        gbc.gridy = 2;
 	        panel.add(bot, gbc);
+	        
+	        gbc.gridy = 3;
+	        panel.add(ai, gbc);
 	        
 	        game.setTitle("Tic-Tac-Toe");
 	        game.setVisible(true);
