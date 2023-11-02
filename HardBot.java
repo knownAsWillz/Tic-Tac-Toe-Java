@@ -88,7 +88,8 @@ public class HardBot extends JFrame {
         if (opponentWin()) {
             JOptionPane.showMessageDialog(this, "You Lose!");
             resetGame();
-        } else if (stalemate()) {
+        } 
+        else if (stalemate()) {
             JOptionPane.showMessageDialog(this, "Stalemate!");
             resetGame();
         }
@@ -151,7 +152,7 @@ public class HardBot extends JFrame {
             return bestScore;
         }
     }
-
+    
     private int evaluate(int[][] board) {
         if (checkWin(board, 2)) {
             return 10;
